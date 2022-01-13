@@ -1,0 +1,15 @@
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\helloworldConsoleApp1.exe
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\helloworldConsoleApp1.deps.json
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\helloworldConsoleApp1.runtimeconfig.json
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\helloworldConsoleApp1.runtimeconfig.dev.json
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\helloworldConsoleApp1.dll
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\helloworldConsoleApp1.pdb
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.csproj.AssemblyReference.cache
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.AssemblyInfoInputs.cache
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.AssemblyInfo.cs
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.csproj.CoreCompileInputs.cache
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.dll
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.pdb
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\obj\Debug\netcoreapp3.1\helloworldConsoleApp1.genruntimeconfig.cache
+C:\workspace\dotnet\HelloWorld\helloworldConsoleApp1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0",
+    "name": "나이트",
+    "max_hp": "1000",
+    "max_stamina": "100",
+    "max_mana": "50",
+    "default_weapon_id": "0",
+    "default_attack_action_text": "을(를) 휘두릅니다."
+  },
+  {
+    "id": "1",
+    "name": "블레이드",
+    "max_hp": "600",
+    "max_stamina": "100",
+    "max_mana": "50",
+    "default_weapon_id": "1",
+    "default_attack_action_text": "으로 찌르고 벱니다."
+  },
+  {
+    "id": "2",
+    "name": "소서리스",
+    "max_hp": "300",
+    "max_stamina": "100",
+    "max_mana": "100",
+    "default_weapon_id": "3",
+    "default_attack_action_text": "을(를) 매개로 마력을 방출합니다."
+  },
+  {
+    "id": "3",
+    "name": "호크아이",
+    "max_hp": "400",
+    "max_stamina": "100",
+    "max_mana": "50",
+    "default_weapon_id": "2",
+    "default_attack_action_text": "을(를) 쏴 명중시킵니다."
+  }
+]

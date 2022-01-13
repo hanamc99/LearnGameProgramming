@@ -1,0 +1,58 @@
+[
+  {
+    "id": "0",
+    "name": "장검",
+    "damage": "8.5",
+    "sellPrice": "5500",
+    "grade": "3"
+  },
+  {
+    "id": "1",
+    "name": "단검",
+    "damage": "3",
+    "sellPrice": "2000",
+    "grade": "1"
+  },
+  {
+    "id": "2",
+    "name": "활",
+    "damage": "5",
+    "sellPrice": "3000",
+    "grade": "2"
+  },
+  {
+    "id": "3",
+    "name": "지팡이",
+    "damage": "2",
+    "sellPrice": "4000",
+    "grade": "2"
+  },
+  {
+    "id": "4",
+    "name": "다크홀드",
+    "damage": "10",
+    "sellPrice": "12000",
+    "grade": "4"
+  },
+  {
+    "id": "5",
+    "name": "정밀한 단도",
+    "damage": "9",
+    "sellPrice": "8000",
+    "grade": "3"
+  },
+  {
+    "id": "6",
+    "name": "스톰브레이커",
+    "damage": "15",
+    "sellPrice": "15000",
+    "grade": "4"
+  },
+  {
+    "id": "7",
+    "name": "바람 정령의 활",
+    "damage": "17",
+    "sellPrice": "20000",
+    "grade": "5"
+  }
+]

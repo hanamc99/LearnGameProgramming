@@ -1,0 +1,58 @@
+[
+  {
+    "id": "0",
+    "name": "스켈레톤",
+    "damage": "5",
+    "max_hp": "30",
+    "grade": "1",
+    "reward": "10"
+  },
+  {
+    "id": "1",
+    "name": "고블린",
+    "damage": "8",
+    "max_hp": "70",
+    "grade": "2",
+    "reward": "30"
+  },
+  {
+    "id": "2",
+    "name": "오크",
+    "damage": "15",
+    "max_hp": "150",
+    "grade": "3",
+    "reward": "70"
+  },
+  {
+    "id": "3",
+    "name": "트롤",
+    "damage": "20",
+    "max_hp": "250",
+    "grade": "3",
+    "reward": "120"
+  },
+  {
+    "id": "4",
+    "name": "뱀파이어",
+    "damage": "100",
+    "max_hp": "1000",
+    "grade": "4",
+    "reward": "800"
+  },
+  {
+    "id": "5",
+    "name": "와이번",
+    "damage": "250",
+    "max_hp": "2500",
+    "grade": "5",
+    "reward": "50"
+  },
+  {
+    "id": "6",
+    "name": "드래곤",
+    "damage": "900",
+    "max_hp": "10000",
+    "grade": "6",
+    "reward": "10000"
+  }
+]
