@@ -81,8 +81,9 @@ namespace helloworldConsoleApp1
                 Console.WriteLine("{0}를 결정하셨습니다.", this.gi.me.name);
                 Console.WriteLine("신규 유저를 위해 5단계 무기를 지급했습니다.");
                 weapon_data data = GetWeaponData(charData.default_weapon_id);
-                Weapon startWeapon = new Weapon(data.id, data.name, data.damage, data.sellPrice, data.grade, 5);;
-                this.gi.EquipWeapon(startWeapon);
+                Weapon startWeapon = new Weapon(data.id, data.name, data.damage, data.sellPrice, data.grade, 5, 50);
+                this.gi.WeaponInit();
+                this.gi.GetWeapon(startWeapon);
                 this.gi.CheckWeaponStatus();
                 this.gi.CheckMyStatus();
                 gi.mapInfo.mapIndex = 1;

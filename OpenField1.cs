@@ -18,7 +18,6 @@ namespace helloworldConsoleApp1
                 Console.WriteLine("{0}걸음 째...", (mapProcess + 1) * 300);
                 Console.ReadLine();
                 mgr.gi.mapInfo.mapProcessNum = mapProcess;
-                Console.WriteLine(mapProcess);
                 if(mapProcess == 0)
                 {
                     Console.WriteLine("\n사람 키만한 풀숲이 우거진 수풀지대에 도착했다.");
@@ -46,11 +45,17 @@ namespace helloworldConsoleApp1
                             {
                                 if (mgr.gi.me.hp > 0)
                                 {
-                                    goblin.hp -= mgr.gi.startWeapon.damage;
+                                    goblin.hp -= mgr.gi.startWeapon[0].damage;
+                                    mgr.gi.startWeapon[0].durability--;
                                     count++;
                                     Console.WriteLine("{0}가 {5}{1} {2}의 피해를 입혔습니다.\n{3}의 남은 체력 {4}", mgr.gi.me.name,
-                                        mgr.GetCharacterData(mgr.gi.me.id).default_attack_action_text, mgr.gi.startWeapon.damage,
-                                        goblin.name, goblin.hp, mgr.gi.startWeapon.name);
+                                        mgr.GetCharacterData(mgr.gi.me.id).default_attack_action_text, mgr.gi.startWeapon[0].damage,
+                                        goblin.name, goblin.hp, mgr.gi.startWeapon[0].name);
+                                    Console.WriteLine("{0} 남은 내구도 : {1}", mgr.gi.startWeapon[0].name, mgr.gi.startWeapon[0].durability);
+                                    if(mgr.gi.startWeapon[0].durability <= 0)
+                                    {
+                                        Console.WriteLine("{0}이(가) 파괴되었습니다.", mgr.gi.startWeapon[0].name);
+                                    }
                                 }
                                 else
                                 {
