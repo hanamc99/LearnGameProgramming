@@ -95,7 +95,7 @@ namespace helloworldConsoleApp1
 
         public void SaveData()
         {
-            Console.WriteLine("데이터를 저장했습니다.");
+            //Console.WriteLine("데이터를 저장했습니다.");
             string saveJson = JsonConvert.SerializeObject(this.gi);
             File.WriteAllText(GAME_INFO_PATH, saveJson);
         }

@@ -90,6 +90,7 @@ namespace helloworldConsoleApp1
                 case 0:
                     break;
                 case 1:
+                    Console.WriteLine("{0}이(가) 파괴되어 {1}를 사용합니다.", this.startWeapon[0].name, this.startWeapon[1].name);
                     this.startWeapon[0] = this.startWeapon[1];
                     weapon_data data2 = DataMgr.GetInstance().GetWeaponData(9);
                     this.startWeapon[1] = new Weapon(data2.id, data2.name, data2.damage, data2.sellPrice, data2.grade, 1, 9999);
@@ -110,6 +111,7 @@ namespace helloworldConsoleApp1
         {
             if(HowManyWeapon() > 0)
             {
+                Console.WriteLine("{0} 수납, {1} 장착", this.startWeapon[0].name, this.startWeapon[1].name);
                 Weapon weapon = this.startWeapon[0];
                 this.startWeapon[0] = this.startWeapon[1];
                 this.startWeapon[1] = weapon;
