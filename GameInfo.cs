@@ -14,7 +14,7 @@ namespace helloworldConsoleApp1
 
         public void CheckMyStatus()
         {
-            Console.WriteLine("[Status]\n{0} Lv.{7}\n[Equipped Weapon] : {8}\n[Storing Weapon] : {9}\nHealth : {1} / {2}\nMana : {3} / {4}\nStamina : {5} / {6}\n\n[Ability Point]\nstr : {8}\nagi : {9}\nint : {10}\n\nGold : {11}",
+            Console.WriteLine("[Status]\n{0} Lv.{2}\n[Equipped Weapon] : {12}\n[Storing Weapon] : {13}\nHealth : {1} / {2}\nMana : {3} / {4}\nStamina : {5} / {6}\n\n[Ability Point]\nstr : {8}\nagi : {9}\nint : {10}\n\nGold : {11}",
                 me.name, me.hp, me.max_hp, me.mana, me.max_mana, me.stamina, me.max_stamina, me.level, me.str, me.agi, me.inte, me.gold, startWeapon[0].name, startWeapon[1].name);
         }
 
@@ -43,9 +43,9 @@ namespace helloworldConsoleApp1
         public void WeaponInit()
         {
             weapon_data data = DataMgr.GetInstance().GetWeaponData(8);
-            this.startWeapon[0] = new Weapon(data.id, data.name, data.damage, data.sellPrice, data.grade, 1, 99);
+            this.startWeapon[0] = new Weapon(data.id, data.name, data.damage, data.sellPrice, data.grade, 1, 9999);
             weapon_data data2 = DataMgr.GetInstance().GetWeaponData(9);
-            this.startWeapon[1] = new Weapon(data2.id, data2.name, data2.damage, data2.sellPrice, data2.grade, 0, 0);
+            this.startWeapon[1] = new Weapon(data2.id, data2.name, data2.damage, data2.sellPrice, data2.grade, 1, 9999);
         }
 
         public void GetWeapon(Weapon weapon)
@@ -54,21 +54,19 @@ namespace helloworldConsoleApp1
             switch (n)
             {
                 case 0:
+                    this.startWeapon[1] = this.startWeapon[0];
                     this.startWeapon[0] = weapon;
-                    weapon_data data = DataMgr.GetInstance().GetWeaponData(8);
-                    this.startWeapon[1] = new Weapon(data.id, data.name, data.damage, data.sellPrice, data.grade, 1, 99);
                     break;
                 case 1:
-                    int count = 0;
-                    for (int i = 0; i < 2; i++)
-                    {
-                        if (this.startWeapon[i].name == "맨손")
-                        {
-                            count = i;
-                            break;
-                        }
-                    }
-                    this.startWeapon[count] = weapon;
+                    Console.WriteLine("교체할 무기를 선택해주세요.");
+                    CheckWeaponStatus();
+                    Console.WriteLine("0 -> {0}\n1 -> {1}", this.startWeapon[0].name, this.startWeapon[1].name);
+                    string choice5 = Console.ReadLine();
+                    int choice55;
+                    int.TryParse(choice5, out choice55);
+                    Console.WriteLine("{0}을 버리고 {1}을 획득했습니다.", this.startWeapon[choice55].name, weapon.name);
+                    this.startWeapon[choice55] = weapon;
+                    CheckWeaponStatus();
                     break;
                 case 2:
                     Console.WriteLine("교체할 무기를 선택해주세요.");
@@ -84,21 +82,42 @@ namespace helloworldConsoleApp1
             }
         }
 
-        public void DestroyWeapon()
+        public void WeaponBreak()
         {
-
+            int n = HowManyWeapon();
+            switch (n)
+            {
+                case 0:
+                    break;
+                case 1:
+                    this.startWeapon[0] = this.startWeapon[1];
+                    weapon_data data2 = DataMgr.GetInstance().GetWeaponData(9);
+                    this.startWeapon[1] = new Weapon(data2.id, data2.name, data2.damage, data2.sellPrice, data2.grade, 1, 9999);
+                    CheckWeaponStatus();
+                    break;
+                case 2:
+                    Console.WriteLine("{0}이(가) 파괴되어 {1}를 사용합니다.", this.startWeapon[0].name, this.startWeapon[1].name);
+                    this.startWeapon[0] = this.startWeapon[1];
+                    weapon_data data = DataMgr.GetInstance().GetWeaponData(8);
+                    this.startWeapon[1] = new Weapon(data.id, data.name, data.damage, data.sellPrice, data.grade, 1, 9999);
+                    CheckWeaponStatus();
+                    break;
+            }
         }
+
 
         public void SwitchWeapon()
         {
-            if(this.startWeapon[1] != null)
+            if(HowManyWeapon() > 0)
             {
-
+                Weapon weapon = this.startWeapon[0];
+                this.startWeapon[0] = this.startWeapon[1];
+                this.startWeapon[1] = weapon;
+                CheckWeaponStatus();
+            } else
+            {
+                Console.WriteLine("교체할 무기가 없습니다.");
             }
-            Weapon weapon = this.startWeapon[0];
-            this.startWeapon[0] = this.startWeapon[1];
-            this.startWeapon[1] = weapon;
-            Console.WriteLine("{0} 장착\n{1} 수납", this.startWeapon[0].name, this.startWeapon[1].name);
         }
     }
 }

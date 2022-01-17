@@ -42,18 +42,7 @@ namespace helloworldConsoleApp1
                     string choice3 = Console.ReadLine();
                     int choice33;
                     int.TryParse(choice3, out choice33);
-                    int beforeNum = mgr.gi.startWeapon[choice33].reinforcement;
-                    float beforeDamage = mgr.gi.startWeapon[choice33].damage;
-                    Console.WriteLine("{0}를 강화해보자!", mgr.gi.startWeapon[choice33].name);
-                    Console.WriteLine("주인장 드워프가 내 무기를 세차게 두들기고 담금질한다.");
-                    Console.WriteLine("결과를 보려면 아무키나 누르세요.");
                     this.EnhanceWeapon(choice33);
-                    Console.ReadLine();
-                    Console.WriteLine("강화 성공!");
-                    Console.WriteLine("{0} {1}단계 -> {2}단계 / 무기 공격력 : {3} -> {4}",
-                        mgr.gi.startWeapon[choice33].name, beforeNum, mgr.gi.startWeapon[choice33].reinforcement, 
-                        beforeDamage, mgr.gi.startWeapon[choice33].damage);
-
                 }
                 else if (choice == "2")
                 {
@@ -73,8 +62,24 @@ namespace helloworldConsoleApp1
 
         private void EnhanceWeapon(int i)
         {
-            mgr.gi.startWeapon[i].reinforcement++;
-            mgr.gi.startWeapon[i].damage += 1.5f;
+            if(mgr.gi.startWeapon[i].name == "맨손" || mgr.gi.startWeapon[i].name == "없음")
+            {
+                Console.WriteLine("주인장 드워프 : 나더러 그걸 강화해달라는 건가?");
+            } else
+            {
+                int beforeNum = mgr.gi.startWeapon[i].reinforcement;
+                float beforeDamage = mgr.gi.startWeapon[i].damage;
+                Console.WriteLine("{0}를 강화해보자!", mgr.gi.startWeapon[i].name);
+                Console.WriteLine("주인장 드워프가 내 무기를 세차게 두들기고 담금질한다.");
+                Console.WriteLine("결과를 보려면 아무키나 누르세요.");
+                mgr.gi.startWeapon[i].reinforcement++;
+                mgr.gi.startWeapon[i].damage += 1.5f;
+                Console.ReadLine();
+                Console.WriteLine("강화 성공!");
+                Console.WriteLine("{0} {1}단계 -> {2}단계 / 무기 공격력 : {3} -> {4}",
+                    mgr.gi.startWeapon[i].name, beforeNum, mgr.gi.startWeapon[i].reinforcement,
+                    beforeDamage, mgr.gi.startWeapon[i].damage);
+            }
         }
     }
 }

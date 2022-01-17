@@ -13,10 +13,20 @@ namespace helloworldConsoleApp1
         {
             mgr.gi.mapInfo.mapIndex = 2;
             int mapProcess = mgr.gi.mapInfo.mapProcessNum;
+            Console.WriteLine("\n상태창 확인 : p\n무기 교체 : i\n");
             while(mapProcess < 10)
             {
                 Console.WriteLine("{0}걸음 째...", (mapProcess + 1) * 300);
-                Console.ReadLine();
+                string str = Console.ReadLine();
+                if(str == "i")
+                {
+                    mgr.gi.SwitchWeapon();
+                } else if(str == "p")
+                {
+                    mgr.gi.WeaponBreak();
+                    mgr.gi.CheckMyStatus();
+                    mgr.gi.CheckWeaponStatus();
+                }
                 mgr.gi.mapInfo.mapProcessNum = mapProcess;
                 if(mapProcess == 0)
                 {
@@ -39,7 +49,6 @@ namespace helloworldConsoleApp1
                     switch (choice2)
                     {
                         case 0:
-                            mgr.gi.me.hp = 1;
                             int count = 0;
                             while (true)
                             {
@@ -54,7 +63,7 @@ namespace helloworldConsoleApp1
                                     Console.WriteLine("{0} 남은 내구도 : {1}", mgr.gi.startWeapon[0].name, mgr.gi.startWeapon[0].durability);
                                     if(mgr.gi.startWeapon[0].durability <= 0)
                                     {
-                                        Console.WriteLine("{0}이(가) 파괴되었습니다.", mgr.gi.startWeapon[0].name);
+                                        mgr.gi.WeaponBreak();
                                     }
                                 }
                                 else
